@@ -1,0 +1,28 @@
+{
+  "model_name": "Isolation Forest",
+  "type": "Unsupervised",
+  "test_accuracy": 0.535,
+  "test_precision": 0.48444444444444446,
+  "test_recall": 0.48337028824833705,
+  "test_f1": 0.4839067702552719,
+  "confusion_matrix": {
+    "labels": [
+      "BENIGN",
+      "ANOMALOUS"
+    ],
+    "matrix": [
+      [
+        317,
+        232
+      ],
+      [
+        233,
+        218
+      ]
+    ]
+  },
+  "contamination": 0.45,
+  "total_samples": 1000,
+  "anomaly_score_mean": 0.4574961644919305,
+  "anomaly_score_std": 0.053322714351680636
+}

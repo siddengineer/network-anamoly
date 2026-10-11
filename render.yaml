@@ -1,0 +1,17 @@
+﻿services:
+  - type: web
+    name: netguard-ai
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: "pip install -r backend/requirements.txt && python backend/train_models.py && npm --prefix frontend install && npm --prefix frontend run build"
+    startCommand: "uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: PYTHON_VERSION
+        value: 3.12.2
+      - key: NODE_VERSION
+        value: 20.17.0
